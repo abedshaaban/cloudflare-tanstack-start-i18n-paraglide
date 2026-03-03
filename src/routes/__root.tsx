@@ -9,6 +9,10 @@ import { m } from '@/paraglide/messages'
 
 export const Route = createRootRoute({
   beforeLoad: async () => {
+    if (typeof document === 'undefined' || typeof window === 'undefined') {
+      return
+    }
+
     document.documentElement.setAttribute('lang', getLocale())
 
     const decision = await shouldRedirect({ url: window.location.href })

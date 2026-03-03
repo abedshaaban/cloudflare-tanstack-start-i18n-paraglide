@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import viteReact from "@vitejs/plugin-react";
-import { tanstackRouter } from "@tanstack/router-plugin/vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import { resolve } from "node:path";
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import tailwindcss from "@tailwindcss/vite";
@@ -41,7 +41,7 @@ export default defineConfig({
         },
       ],
     }),
-    tanstackRouter({ autoCodeSplitting: true }),
+    tanstackStart(),
     viteReact(),
   ],
   resolve: {
